@@ -403,10 +403,15 @@
 						<div class="contact-info-item">
 							<p class="social-links">
 								<span>Find me on</span>
-								<a href="#"><i class="fab fa-facebook-f"></i></a>
-								<a href="#"><i class="fab fa-github"></i></a>
-								<a href="#"><i class="fab fa-instagram"></i></a>
-								<a href="#"><i class="fab fa-linkedin"></i></a>
+								<a href="https://github.com/dpark369"
+									><i class="fab fa-github"></i
+								></a>
+								<a href="https://www.instagram.com/danparkisbae/"
+									><i class="fab fa-instagram"></i
+								></a>
+								<a href="https://www.linkedin.com/in/dpark369/"
+									><i class="fab fa-linkedin"></i
+								></a>
 							</p>
 						</div>
 						<button type="button" class="btn toggle-contact-form-btn">
@@ -421,12 +426,17 @@
 									type="button"
 									class="close-btn toggle-contact-form-btn"
 								></button>
-								<form>
+								<form
+									action="https://formsubmit.co/danpark3030@email.com"
+									method="POST"
+								>
 									<div class="row">
 										<div class="input-group">
 											<input
 												type="text"
 												placeholder="Your Name"
+												name="name"
+												required
 												class="input-control"
 											/>
 										</div>
@@ -434,6 +444,7 @@
 											<input
 												type="text"
 												placeholder="Your Email"
+												name="email"
 												class="input-control"
 											/>
 										</div>
@@ -450,6 +461,11 @@
 												class="input-control"
 											></textarea>
 										</div>
+										<input
+											type="hidden"
+											name="_next"
+											value="https://danielpark.tech/thanks.html"
+										/>
 										<div class="input-group">
 											<button type="submit" class="btn btn-submit">send</button>
 										</div>
