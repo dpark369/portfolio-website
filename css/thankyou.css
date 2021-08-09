@@ -12,7 +12,7 @@ h1 {
 	font-size: 5rem;
 }
 
-button {
+.btn {
 	background-color: #00cccc;
 	margin-top: 50px;
 	padding: 9px 25px;
@@ -25,6 +25,23 @@ button {
 	position: relative;
 	display: inline-block;
 	font-weight: 600;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	border: 1px solid white;
+	transform: translate(4px, 4px);
+	transition: transform 0.3s ease;
+	pointer-events: none;
+}
+
+.btn:hover::before {
+	transform: translate(0px, 0px);
 }
 
 @media screen and (max-width: 700px) {
