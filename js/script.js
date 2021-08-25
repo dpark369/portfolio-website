@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
 //Bg Animation Effect
 let canvas = document.querySelector('canvas');
-let c = canvas.getContext('2d');
+let ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -43,17 +43,17 @@ function LightParticle(x, y, radius, color) {
 	};
 
 	this.draw = function () {
-		c.save();
-		c.beginPath();
-		c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-		c.shadowColor = this.color;
-		c.shadowBlur = 15;
-		c.shadowOffsetX = 0;
-		c.shadowOffsetY = 0;
-		c.fillStyle = this.color;
-		c.fill();
-		c.closePath();
-		c.restore();
+		ctx.save();
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+		ctx.shadowColor = this.color;
+		ctx.shadowBlur = 15;
+		ctx.shadowOffsetX = 0;
+		ctx.shadowOffsetY = 0;
+		ctx.fillStyle = this.color;
+		ctx.fill();
+		ctx.closePath();
+		ctx.restore();
 	};
 }
 
@@ -62,7 +62,7 @@ let lightParticles = [];
 let timer = 0;
 let opacity = 1;
 let speed = 0.0005;
-let colors = ['#0952BD', '#A5BFF0', '#118CD6', '#1AAEE8', '#F2E8C9'];
+let colors = ['#0952BD', '#A5BFF0', '#1B635D', '#6D409F', '#F2E8C9', '#F6B04A'];
 
 let initializeParticles;
 
@@ -82,12 +82,12 @@ let initializeParticles;
 function animate() {
 	window.requestAnimationFrame(animate);
 
-	c.save();
+	ctx.save();
 	if (isMouseDown === true) {
 		// Ease into the new opacity
 		let desiredOpacity = 0.01;
 		opacity += (desiredOpacity - opacity) * 0.03;
-		c.fillStyle = 'rgba(18, 18, 18,' + opacity + ')';
+		ctx.fillStyle = 'rgba(18, 18, 18,' + opacity + ')';
 
 		// Ease into the new speed
 		let desiredSpeed = 0.012;
@@ -97,7 +97,7 @@ function animate() {
 		// Ease back to the original opacity
 		let originalOpacity = 1;
 		opacity += (originalOpacity - opacity) * 0.01;
-		c.fillStyle = 'rgba(18, 18, 18, ' + opacity + ')';
+		ctx.fillStyle = 'rgba(18, 18, 18, ' + opacity + ')';
 
 		// Ease back to the original speed
 		let originalSpeed = 0.001;
@@ -105,15 +105,15 @@ function animate() {
 		timer += speed;
 	}
 
-	c.fillRect(0, 0, canvas.width, canvas.height);
-	c.translate(canvas.width / 2, canvas.height / 2);
-	c.rotate(timer);
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.translate(canvas.width / 2, canvas.height / 2);
+	ctx.rotate(timer);
 
 	for (let i = 0; i < lightParticles.length; i++) {
 		lightParticles[i].update();
 	}
 
-	c.restore();
+	ctx.restore();
 }
 
 let isMouseDown = false;
