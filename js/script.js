@@ -19,10 +19,10 @@ let mouse = {
 	y: window.innerHeight / 2,
 };
 
-window.addEventListener('mousemove', function (event) {
-	mouse.x = event.clientX - canvas.width / 2;
-	mouse.y = event.clientY - canvas.height / 2;
-});
+// window.addEventListener('mousemove', function (event) {
+// 	mouse.x = event.clientX - canvas.width / 2;
+// 	mouse.y = event.clientY - canvas.height / 2;
+// });
 
 window.addEventListener('resize', function () {
 	canvas.width = window.innerWidth;
