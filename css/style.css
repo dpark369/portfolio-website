@@ -1,5 +1,5 @@
 :root {
-	--main-color: #00cccc;
+	--main-color: #00b786;
 	--dark: #121212;
 	--dark-light: #151718;
 	--white: #ffffff;
@@ -121,7 +121,7 @@ canvas {
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	z-index: -1;
+	z-index: -2;
 }
 /* Buttons */
 button {

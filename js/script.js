@@ -19,11 +19,6 @@ let mouse = {
 	y: window.innerHeight / 2,
 };
 
-// window.addEventListener('mousemove', function (event) {
-// 	mouse.x = event.clientX - canvas.width / 2;
-// 	mouse.y = event.clientY - canvas.height / 2;
-// });
-
 window.addEventListener('resize', function () {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
@@ -32,7 +27,7 @@ window.addEventListener('resize', function () {
 	initializeParticles();
 });
 
-function LightParticle(x, y, radius, color) {
+function Particle(x, y, radius, color) {
 	this.x = x;
 	this.y = y;
 	this.radius = radius;
@@ -74,7 +69,7 @@ let initializeParticles;
 		let x = Math.random() * (canvas.width + 200) - (canvas.width + 200) / 2;
 		let y = Math.random() * (canvas.width + 200) - (canvas.width + 200) / 2;
 		lightParticles.push(
-			new LightParticle(x, y, randomRadius, colors[randomColorIndex])
+			new Particle(x, y, randomRadius, colors[randomColorIndex])
 		);
 	}
 })();
