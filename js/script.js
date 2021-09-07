@@ -26,18 +26,16 @@ window.addEventListener('resize', function () {
 	lightParticles = [];
 	initializeParticles();
 });
+//change this to a class
+class Particle {
+	constructor(x, y, radius, color) {
+		this.x = x;
+		this.y = y;
+		this.radius = radius;
+		this.color = color;
+	}
 
-function Particle(x, y, radius, color) {
-	this.x = x;
-	this.y = y;
-	this.radius = radius;
-	this.color = color;
-
-	this.update = function () {
-		this.draw();
-	};
-
-	this.draw = function () {
+	draw() {
 		ctx.save();
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
@@ -49,7 +47,10 @@ function Particle(x, y, radius, color) {
 		ctx.fill();
 		ctx.closePath();
 		ctx.restore();
-	};
+	}
+	update() {
+		this.draw();
+	}
 }
 
 let lightParticles = [];
@@ -63,7 +64,7 @@ let initializeParticles;
 
 (initializeParticles = function () {
 	for (let i = 0; i < particleCount; i++) {
-		let randomColorIndex = Math.floor(Math.random() * 6);
+		let randomColorIndex = Math.floor(Math.random() * colors.length);
 		let randomRadius = Math.random() * 2;
 
 		let x = Math.random() * (canvas.width + 200) - (canvas.width + 200) / 2;
