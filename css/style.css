@@ -919,26 +919,11 @@ About Section
 
 /* Responsive */
 @media (max-width: 991px) {
-	.bg-animation-effect .col-10,
-	.bg-animation-effect .col-9,
-	.bg-animation-effect .col-8 {
-		display: none;
-	}
-	.bg-animation-effect div {
-		margin-left: calc((100% - 28px) / 8);
-	}
 	.portfolio-item {
 		width: calc(50% - 30px);
 	}
 }
 @media (max-width: 767px) {
-	.bg-animation-effect .col-7,
-	.bg-animation-effect .col-6 {
-		display: none;
-	}
-	.bg-animation-effect div {
-		margin-left: calc((100% - 20px) / 6);
-	}
 	.portfolio-item {
 		width: calc(100% - 30px);
 	}
@@ -960,12 +945,12 @@ About Section
 	.about-content h1 {
 		font-size: 1.5rem;
 	}
+	.about-section .min-vh-100 {
+		padding: 0px 15px;
+	}
 }
 @media (max-width: 350px) {
 	body {
 		font-size: 14px;
-	}
-	.about-section .min-vh-100 {
-		padding: 70px 15px;
 	}
 }

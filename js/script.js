@@ -13,11 +13,7 @@ let ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particleCount = 300;
-let mouse = {
-	x: window.innerWidth / 2,
-	y: window.innerHeight / 2,
-};
+let particleCount = 250;
 
 window.addEventListener('resize', function () {
 	canvas.width = window.innerWidth;
@@ -26,7 +22,7 @@ window.addEventListener('resize', function () {
 	lightParticles = [];
 	initializeParticles();
 });
-//change this to a class
+
 class Particle {
 	constructor(x, y, radius, color) {
 		this.x = x;
@@ -77,9 +73,8 @@ let initializeParticles;
 
 function animate() {
 	window.requestAnimationFrame(animate);
-
 	ctx.save();
-	if (isMouseDown === true) {
+	if (isMouseDown === true || isFingerDown === true) {
 		// Ease into the new opacity
 		let desiredOpacity = 0.01;
 		opacity += (desiredOpacity - opacity) * 0.03;
@@ -113,13 +108,22 @@ function animate() {
 }
 
 let isMouseDown = false;
+let isFingerDown = false;
 
-window.addEventListener('mousedown', function () {
+window.addEventListener('mousedown', () => {
 	isMouseDown = true;
 });
 
-window.addEventListener('mouseup', function () {
+window.addEventListener('mouseup', () => {
 	isMouseDown = false;
+});
+
+window.addEventListener('touchstart', () => {
+	isFingerDown = true;
+});
+
+window.addEventListener('touchend', () => {
+	isFingerDown = false;
 });
 
 animate();
