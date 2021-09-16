@@ -13,7 +13,7 @@ let ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particleCount = 250;
+let particleCount = 200;
 
 window.addEventListener('resize', function () {
 	canvas.width = window.innerWidth;
