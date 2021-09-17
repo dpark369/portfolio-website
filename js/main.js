@@ -5,9 +5,8 @@
 // 		document.querySelector('.page-loader').style.display = 'none';
 // 	}, 1000);
 // });
-
 import pageLoader from './loader';
-
+pageLoader();
 //Toggle Navbar
 const navToggler = document.querySelector('.nav-toggler');
 navToggler.addEventListener('click', toggleNavbar);
