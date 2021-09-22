@@ -1,12 +1,13 @@
 //Page Loader
-// window.addEventListener('load', () => {
-// 	document.querySelector('.page-loader').classList.add('slide-out-right');
-// 	setTimeout(() => {
-// 		document.querySelector('.page-loader').style.display = 'none';
-// 	}, 1000);
-// });
-import pageLoader from './loader';
-pageLoader();
+//When page  loads it gets rid of the page-loader overlay
+
+window.addEventListener('load', () => {
+	document.querySelector('.page-loader').classList.add('slide-out-right');
+	setTimeout(() => {
+		document.querySelector('.page-loader').style.display = 'none';
+	}, 1000);
+});
+
 //Toggle Navbar
 const navToggler = document.querySelector('.nav-toggler');
 navToggler.addEventListener('click', toggleNavbar);

@@ -56,9 +56,9 @@ class Particle {
 		this.draw();
 	}
 }
+// particle properties
 
 let lightParticles = [];
-
 let particleCount = 200;
 let timer = 0;
 let opacity = 1;
@@ -66,6 +66,7 @@ let speed = 0.0005;
 let colors = ['#0952BD', '#A5BFF0', '#1B635D', '#6D409F', '#F2E8C9', '#F6B04A'];
 
 let initializeParticles;
+//creates particles using the properties above
 
 (initializeParticles = function () {
 	for (let i = 0; i < particleCount; i++) {
@@ -80,6 +81,7 @@ let initializeParticles;
 	}
 })();
 
+//Runs the animation loop
 function animate() {
 	window.requestAnimationFrame(animate);
 	ctx.save();
